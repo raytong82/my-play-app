@@ -17,3 +17,12 @@ GET     /echoJson                   controllers.HelloWorldController.echoJson
 GET     /response                   controllers.HelloWorldController.response
 GET     /redirect                   controllers.HelloWorldController.redirect
 GET     /to_do                      controllers.HelloWorldController.to_do
+
+GET     /route/show/:id                  controllers.RoutingController.show(id: Long)
+GET     /route/full/*name                controllers.RoutingController.full(name)
+GET     /route/custom/$id<[0-9]+>        controllers.RoutingController.custom(id: Long)
+GET     /route/param                     controllers.RoutingController.param(param)
+GET     /route/fixed/                    controllers.RoutingController.fixed(param = "fixed")
+GET     /route/fixed/:param              controllers.RoutingController.fixed(param)
+GET     /route/default                   controllers.RoutingController.default(param ?= "default")
+GET     /route/option                    controllers.RoutingController.option(param: Option[String])
